@@ -1,5 +1,9 @@
+* {
+ margin: 0;
+ padding: 0;
+}
 
-
+@media screen and (min-width: 1200px) {
 .grid{
   height: 100vh;
   display: grid;
@@ -12,7 +16,7 @@
   grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 2;
-  font-size: 3em;
+  font-size: 3.2vw;
 
 }
 
@@ -21,6 +25,8 @@
   grid-row-end: 3;
   grid-column-start:3;
   grid-column-end:4;
+  height: 75vh;
+  width: 40vw;
 }
 
 .thumbnails {
@@ -31,7 +37,7 @@
 .description{
   grid-column-start:4;
   grid-column-end: 5;
-  font-size: 1.5em;
+  font-size: 2vw;
   border: 0;
   margin: 0;
   grid-row-start:2;
@@ -39,35 +45,122 @@
 }
 
 
-
-
-
-
 #overlay{
-  /*border:1px solid black;*/
-  width:500px;
-  height:500px;
+  width:40vw;
+  height:60vh;
   display:inline-block, hidden;
   background-image:url('DarthVader.jpg');
   background-repeat:no-repeat;
-
-  
+  grid-column-start:4;
+  grid-column-end: 5;
+  border: 0;
+  margin: 0;
+  grid-row-start:2;
+  z-index: 1000;
 }
 
 img {
-    border: 1px solid #ddd; /* Gray border */
-    border-radius: 4px;  /* Rounded border */
-    padding: 5px; /* Some padding */
-    width: 500px; /* Set a small width */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px; 
 }
 
-/* Add a hover effect (blue shadow) */
 img:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
 .thumb {
-  height: 100px;
-  width: 100px;
+  height: 13vh;
+  width: 5vw;
   border: 1px solid #ddd;
+}
+
+.video {
+  margin-top: 5vh;
+}
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+
+.grid{
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 10vh 1fr 1fr;
+  grid-template-columns: 1vw 5vw 43vw 48vw 1vw;
+  grid-gap: 1vw;
+}
+
+.h1 {
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  font-size: 3.2vw;
+
+}
+
+.main {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start:3;
+  grid-column-end:4;
+  height: 60vh;
+  width: 40vw;
+}
+
+.thumbnails {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  width: 8vw;
+}
+
+.description{
+  grid-column-start:4;
+  grid-column-end: 5;
+  font-size: 2vw;
+  border: 0;
+  margin: 0;
+  grid-row-start:2;
+
+}
+
+
+#overlay{
+  width:40vw;
+  height:60vh;
+  display:inline-block, hidden;
+  background-image:url('DarthVader.jpg');
+  background-repeat:no-repeat;
+  grid-column-start:4;
+  grid-column-end: 5;
+  border: 0;
+  margin: 0;
+  grid-row-start:2;
+  z-index: 1000;
+  width: 40vw;
+  height: 60vh;
+}
+
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px; 
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.thumb {
+  height: 13vh;
+  width: 8vw;
+  border: 1px solid #ddd;
+}
+
+.video {
+  margin-top: 5vh;
+   width: 500px; 
+   height: 315px;
+}
 }
