@@ -99,12 +99,7 @@ border: 1px solid lightblue;
 }
 
 #overlay {
-  display: none;
-  z-index: 1000;
-  grid-column-start: 4;
-  grid-column-end: 5;
-  grid-row: 2;
-  background-repeat: no-repeat;
+  display: none !important;
 }
 
 ul {
@@ -155,12 +150,7 @@ ul {
 }
 
 #overlay {
-  display: none;
-  z-index: 1000;
-  grid-column-start: 4;
-  grid-column-end: 5;
-  grid-row: 2;
-  background-repeat: no-repeat;
+  display: none !important;
 }
 
 ul {
