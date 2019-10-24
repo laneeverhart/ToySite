@@ -1,166 +1,175 @@
 * {
- margin: 0;
- padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-@media screen and (min-width: 1200px) {
-.grid{
-  height: 100vh;
+@media only screen and (min-width: 1200px) {
+
+.grid {
   display: grid;
-  grid-template-rows: 100px 1fr 1fr;
-  grid-template-columns: 10px 100px 1fr 1fr 10px;
+  grid-template-columns: 2% 16% 40% 40% 2%;
+  grid-template-rows: 10% 1fr 1fr;
 }
 
-.h1 {
+.title {
   grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  font-size: 3.2vw;
-
-}
-
-.main {
-  grid-row-start: 2;
-  grid-row-end: 3;
-  grid-column-start:3;
-  grid-column-end:4;
-  height: 75vh;
-  width: 40vw;
+  grid-column-end: 4;
+  font-size: 3em;
 }
 
 .thumbnails {
-  grid-column-start: 1;
-  grid-column-end: 2;
-}
-
-.description{
-  grid-column-start:4;
-  grid-column-end: 5;
-  font-size: 2vw;
-  border: 0;
-  margin: 0;
-  grid-row-start:2;
-
-}
-
-
-#overlay{
-  width:40vw;
-  height:60vh;
-  display:inline-block, hidden;
-  background-image:url('DarthVader.jpg');
-  background-repeat:no-repeat;
-  grid-column-start:4;
-  grid-column-end: 5;
-  border: 0;
-  margin: 0;
-  grid-row-start:2;
-  z-index: 1000;
-}
-
-img {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px; 
-}
-
-img:hover {
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row: 2;
 }
 
 .thumb {
-  height: 13vh;
-  width: 5vw;
-  border: 1px solid #ddd;
-}
-
-.video {
-  margin-top: 5vh;
-}
-}
-
-@media screen and (min-width: 900px) and (max-width: 1199px) {
-
-.grid{
-  height: 100vh;
-  width: 100vw;
-  display: grid;
-  grid-template-rows: 10vh 1fr 1fr;
-  grid-template-columns: 1vw 5vw 43vw 48vw 1vw;
-  grid-gap: 1vw;
-}
-
-.h1 {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  font-size: 3.2vw;
-
+  height: 20%;
+  width: 80%;
+  border: 1px solid lightblue;
 }
 
 .main {
-  grid-row-start: 2;
-  grid-row-end: 3;
-  grid-column-start:3;
-  grid-column-end:4;
-  height: 60vh;
-  width: 40vw;
+  height: 85%;
+  width: 85%;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.description {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row: 2;
+  z-index: 900;
+  font-size: 1.5rem;
+}
+
+#overlay {
+  z-index: 1000;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row: 2;
+  background-repeat: no-repeat;
+}
+
+ul {
+  list-style: none;
+}
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1199px){
+
+.grid {
+  display: grid;
+  grid-template-columns: 2% 48% 48% 2%;
+  grid-template-areas: 
+  ". title title ."
+  ". thumbnails main ." 
+  ". description description ."
+  ". video video ."
+  ;
+}
+
+.title {
+  grid-area: title;
+  font-size: 3rem;
 }
 
 .thumbnails {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  width: 8vw;
-}
-
-.description{
-  grid-column-start:4;
-  grid-column-end: 5;
-  font-size: 2vw;
-  border: 0;
-  margin: 0;
-  grid-row-start:2;
-
-}
-
-
-#overlay{
-  width:40vw;
-  height:60vh;
-  display:inline-block, hidden;
-  background-image:url('DarthVader.jpg');
-  background-repeat:no-repeat;
-  grid-column-start:4;
-  grid-column-end: 5;
-  border: 0;
-  margin: 0;
-  grid-row-start:2;
-  z-index: 1000;
-  width: 40vw;
-  height: 60vh;
-}
-
-img {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px; 
-}
-
-img:hover {
-    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  grid-area: thumbnails;
+  height: 70vh;
 }
 
 .thumb {
-  height: 13vh;
-  width: 8vw;
-  border: 1px solid #ddd;
+ height: 30%;
+ width: 50%;
+border: 1px solid lightblue;
 }
 
-.video {
-  margin-top: 5vh;
-   width: 500px; 
-   height: 315px;
+.main {
+  height: 90%;
+  width: 100%;
+  grid-area: main;
+}
+
+.description {
+  grid-area: description;
+  z-index: 900;
+  font-size: 1.5rem;
+}
+
+#overlay {
+  display: none;
+  z-index: 1000;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row: 2;
+  background-repeat: no-repeat;
+}
+
+ul {
+  list-style: none;
 }
 }
+
+@media only screen and (max-width: 799px){
+
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 2% 1fr 2%;
+  grid-template-areas: 
+  ". title ."
+  ". thumbnails ." 
+  ". description ."
+  ". video ."
+  ;
+}
+
+.title {
+  grid-area: title;
+  font-size: 3rem;
+}
+
+.thumbnails {
+  grid-area: thumbnails;
+  text-align: center;
+}
+
+.thumb {
+ height: 40%;
+ width: 70%;
+ border: 1px solid lightblue;
+}
+
+.main {
+  height: 90%;
+  width: 100%;
+  display: none;
+}
+
+.description {
+  grid-area: description;
+  z-index: 900;
+  font-size: 1.5rem;
+}
+
+#overlay {
+  display: none;
+  z-index: 1000;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row: 2;
+  background-repeat: no-repeat;
+}
+
+ul {
+  list-style: none;
+}
+}
+
+
+
+
+
+
